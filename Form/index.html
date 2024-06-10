@@ -18,12 +18,12 @@
         <label for="start"> Fecha de solicitud </label>
         <input type="date" id="start" name="start" />
       </section>
-      <section class="check-public">
+      <div class="check-public">
         <label for="estudiante">Estudiante</label>
         <input type="checkbox" id="estudiante" name="estudiante" />
         <label for="publico">Público en General</label>
         <input type="checkbox" id="publico" name="publico" />
-      </section>
+      </div>
     </header>
     <main>
       <form class="form">
@@ -87,7 +87,7 @@
           <option value="Venezuela">Venezuela</option>
         </select>
         <label for="department">Departamento</label>
-        <select id="departments" name="department" required>
+        <select id="department" name="department" required>
           <option value="" disabled selected>Selecciona un departamento</option>
           <option value="Amazonas">Amazonas</option>
           <option value="Antioquia">Antioquia</option>
@@ -126,7 +126,12 @@
         </select>
 
         <label for="phone">Telefono</label>
-        <input type="tel" placeholder="Enter your phone number" />
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          placeholder="Enter your phone number"
+        />
         <label for="description">Descripción Personal</label>
         <textarea
           name="description"
@@ -157,9 +162,9 @@
         </select>
         <div class="working">
           <p>¿Estás trabajando actualmente?</p>
-          <label for="working">Si</label>
+          <label for="workingTrue">Si</label>
           <input type="radio" name="working" id="workingTrue" required />
-          <label for="working">No</label>
+          <label for="workingFalse">No</label>
           <input type="radio" name="working" id="workingFalse" required />
         </div>
         <div class="buttons">
