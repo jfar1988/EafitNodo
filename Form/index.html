@@ -16,27 +16,50 @@
       <section class="check-date">
         <h1 class="title">Solicitud de emision</h1>
         <label for="start"> Fecha de solicitud </label>
-        <input type="date" name="start" id="" />
+        <input type="date" id="start" name="start" />
       </section>
       <section class="check-public">
         <label for="estudiante">Estudiante</label>
-        <input type="checkbox" name="estudiante" id="" />
+        <input type="checkbox" id="estudiante" name="estudiante" />
         <label for="publico">Público en General</label>
-        <input type="checkbox" name="publico" id="" />
+        <input type="checkbox" id="publico" name="publico" />
       </section>
     </header>
     <main>
-      <form class="form" action="">
+      <form class="form">
         <label for="name">Nombre</label>
-        <input type="text" placeholder="Enter your name" required />
+        <input
+          type="text"
+          placeholder="Enter your name"
+          name="name"
+          id="name"
+          required
+        />
         <label for="lastName">Apellido</label>
-        <input type="text" placeholder="Enter your last name" required />
+        <input
+          type="text"
+          placeholder="Enter your last name"
+          name="lastName"
+          id="lastName"
+          required
+        />
         <label for="email">Email</label>
-        <input type="email" placeholder="Enter your email" required />
+        <input
+          type="email"
+          placeholder="Enter your email"
+          name="email"
+          id="email"
+          required
+        />
         <label for="address">Dirección</label>
-        <input type="text" placeholder="Enter your address" />
+        <input
+          type="text"
+          placeholder="Enter your address"
+          name="address"
+          id="address"
+        />
         <label for="countries">País:</label>
-        <select name="countries" required>
+        <select name="countries" id="countries" required>
           <option value="" disabled selected>Selecciona un país</option>
           <option value="Afganistán">Afganistán</option>
           <option value="Alemania">Alemania</option>
@@ -135,9 +158,9 @@
         <div class="working">
           <p>¿Estás trabajando actualmente?</p>
           <label for="working">Si</label>
-          <input type="radio" name="working" id="working" required />
+          <input type="radio" name="working" id="workingTrue" required />
           <label for="working">No</label>
-          <input type="radio" name="working" id="working" required />
+          <input type="radio" name="working" id="workingFalse" required />
         </div>
         <div class="buttons">
           <button class="submit" type="submit">Submit</button>
