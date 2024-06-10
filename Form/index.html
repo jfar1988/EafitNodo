@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Formulario de Inscripción</title>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="https://es.nodoeafit.com/wp-content/uploads/2023/11/logoNdoprincipal.svg"
+        alt="logo-nodo"
+        class="logo"
+      />
+      <section class="check-date">
+        <h1 class="title">Solicitud de emision</h1>
+        <label for="start"> Fecha de solicitud </label>
+        <input type="date" name="start" id="" />
+      </section>
+      <section class="check-public">
+        <label for="estudiante">Estudiante</label>
+        <input type="checkbox" name="estudiante" id="" />
+        <label for="publico">Público en General</label>
+        <input type="checkbox" name="publico" id="" />
+      </section>
+    </header>
+    <main>
+      <form class="form" action="">
+        <label for="name">Nombre</label>
+        <input type="text" placeholder="Enter your name" required />
+        <label for="lastName">Apellido</label>
+        <input type="text" placeholder="Enter your last name" required />
+        <label for="email">Email</label>
+        <input type="email" placeholder="Enter your email" required />
+        <label for="address">Dirección</label>
+        <input type="text" placeholder="Enter your address" />
+        <label for="countries">País:</label>
+        <select name="countries" required>
+          <option value="" disabled selected>Selecciona un país</option>
+          <option value="Afganistán">Afganistán</option>
+          <option value="Alemania">Alemania</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Australia">Australia</option>
+          <option value="Brasil">Brasil</option>
+          <option value="Canadá">Canadá</option>
+          <option value="Chile">Chile</option>
+          <option value="China">China</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Corea del Sur">Corea del Sur</option>
+          <option value="España">España</option>
+          <option value="Estados Unidos">Estados Unidos</option>
+          <option value="Francia">Francia</option>
+          <option value="India">India</option>
+          <option value="Italia">Italia</option>
+          <option value="Japón">Japón</option>
+          <option value="México">México</option>
+          <option value="Perú">Perú</option>
+          <option value="Reino Unido">Reino Unido</option>
+          <option value="Rusia">Rusia</option>
+          <option value="Sudáfrica">Sudáfrica</option>
+          <option value="Suecia">Suecia</option>
+          <option value="Suiza">Suiza</option>
+          <option value="Venezuela">Venezuela</option>
+        </select>
+        <label for="department">Departamento</label>
+        <select id="departments" name="department" required>
+          <option value="" disabled selected>Selecciona un departamento</option>
+          <option value="Amazonas">Amazonas</option>
+          <option value="Antioquia">Antioquia</option>
+          <option value="Arauca">Arauca</option>
+          <option value="Atlántico">Atlántico</option>
+          <option value="Bolívar">Bolívar</option>
+          <option value="Boyacá">Boyacá</option>
+          <option value="Caldas">Caldas</option>
+          <option value="Caquetá">Caquetá</option>
+          <option value="Casanare">Casanare</option>
+          <option value="Cauca">Cauca</option>
+          <option value="Cesar">Cesar</option>
+          <option value="Chocó">Chocó</option>
+          <option value="Córdoba">Córdoba</option>
+          <option value="Cundinamarca">Cundinamarca</option>
+          <option value="Guainía">Guainía</option>
+          <option value="Guaviare">Guaviare</option>
+          <option value="Huila">Huila</option>
+          <option value="La Guajira">La Guajira</option>
+          <option value="Magdalena">Magdalena</option>
+          <option value="Meta">Meta</option>
+          <option value="Nariño">Nariño</option>
+          <option value="Norte de Santander">Norte de Santander</option>
+          <option value="Putumayo">Putumayo</option>
+          <option value="Quindío">Quindío</option>
+          <option value="Risaralda">Risaralda</option>
+          <option value="San Andrés y Providencia">
+            San Andrés y Providencia
+          </option>
+          <option value="Santander">Santander</option>
+          <option value="Sucre">Sucre</option>
+          <option value="Tolima">Tolima</option>
+          <option value="Valle del Cauca">Valle del Cauca</option>
+          <option value="Vaupés">Vaupés</option>
+          <option value="Vichada">Vichada</option>
+        </select>
+
+        <label for="phone">Telefono</label>
+        <input type="tel" placeholder="Enter your phone number" />
+        <label for="description">Descripción Personal</label>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+          maxlength="300"
+          placeholder="Enter your description"
+        ></textarea>
+        <label for="career">¿A qué carrera deseas inscribirte?</label>
+        <select name="careers" id="career" required>
+          <option value="" disabled selected>Selecciona una carrera</option>
+          <option value="JOBS_TO_BE_DONE">JOBS TO BE DONE</option>
+          <option value="CLOUD_NATIVE">CLOUD NATIVE</option>
+          <option value="FRONTEND">FRONTEND</option>
+          <option value="BACKEND">BACKEND</option>
+          <option value="FUNDAMENTALS">FUNDAMENTALS</option>
+          <option value="PYTHON">PYTHON</option>
+          <option value="MARKETING_DIGITAL">MARKETING DIGITAL</option>
+          <option value="OTHERS">
+            Pueden obtener más de la página de Nodo.
+          </option>
+        </select>
+        <label for="modality">Modalidad</label>
+        <select name="modality" id="modality">
+          <option value="PRESENCIAL">PRESENCIAL</option>
+          <option value="VIRTUAL">VIRTUAL</option>
+        </select>
+        <div class="working">
+          <p>¿Estás trabajando actualmente?</p>
+          <label for="working">Si</label>
+          <input type="radio" name="working" id="working" required />
+          <label for="working">No</label>
+          <input type="radio" name="working" id="working" required />
+        </div>
+        <div class="buttons">
+          <button class="submit" type="submit">Submit</button>
+          <button class="reset" type="reset">Reset</button>
+        </div>
+      </form>
+    </main>
+    <footer></footer>
+  </body>
+</html>
