@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-image: url("img/fondo_1.jpg");
+  width: 100vw;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+.header__tittle {
+  text-transform: uppercase;
+  background-color: rgba(129, 126, 126, 0.333);
+  color: black;
+  font-size: 5vw;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 100%;
+}
+.header__img {
+  max-width: 100%;
+  max-height: 100%;
+}
