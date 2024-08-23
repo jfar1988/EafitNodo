@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio de Tiempo de un Nadador</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        label { display: block; margin: 10px 0; }
+        input[type="number"] { width: 100px; }
+        .result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Promedio de Tiempo de un Nadador</h2>
+    <form id="nadadorForm">
+        <label>Prueba 1: <input type="number" id="prueba1" required></label>
+        <label>Prueba 2: <input type="number" id="prueba2" required></label>
+        <label>Prueba 3: <input type="number" id="prueba3" required></label>
+        <label>Prueba 4: <input type="number" id="prueba4" required></label>
+        <label>Prueba 5: <input type="number" id="prueba5" required></label>
+        <button type="button" onclick="calcularPromedio()">Calcular Promedio</button>
+    </form>
+    <div class="result" id="resultadoNadador"></div>
+
+    <script>
+        function calcularPromedio() {
+            const tiempos = [
+                parseFloat(document.getElementById('prueba1').value),
+                parseFloat(document.getElementById('prueba2').value),
+                parseFloat(document.getElementById('prueba3').value),
+                parseFloat(document.getElementById('prueba4').value),
+                parseFloat(document.getElementById('prueba5').value)
+            ];
+            const promedio = tiempos.reduce((a, b) => a + b, 0) / tiempos.length;
+            document.getElementById('resultadoNadador').textContent = 'Promedio de tiempo: ' + promedio.toFixed(2) + ' segundos';
+        }
+    </script>
+</body>
+</html>

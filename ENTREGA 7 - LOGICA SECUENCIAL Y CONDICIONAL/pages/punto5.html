@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liquidación de Empleados</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: auto;
+      }
+      input[type="number"],
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+      button {
+        background-color: #ffc107;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #e0a800;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Liquidación de Empleados</h1>
+    <form id="employeeForm">
+      <label for="daysWorked">Días trabajados:</label>
+      <input type="number" id="daysWorked" min="0" required />
+
+      <label for="dayExtraHours">Horas extras diurnas:</label>
+      <input type="number" id="dayExtraHours" min="0" required />
+
+      <label for="nightExtraHours">Horas extras nocturnas:</label>
+      <input type="number" id="nightExtraHours" min="0" required />
+
+      <label for="holidayExtraHours">Horas extras festivos:</label>
+      <input type="number" id="holidayExtraHours" min="0" required />
+
+      <button type="button" onclick="calculateSalary()">
+        Calcular Liquidación
+      </button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+      function calculateSalary() {
+        let daysWorked = parseFloat(
+          document.getElementById("daysWorked").value
+        );
+        let dayExtraHours = parseFloat(
+          document.getElementById("dayExtraHours").value
+        );
+        let nightExtraHours = parseFloat(
+          document.getElementById("nightExtraHours").value
+        );
+        let holidayExtraHours = parseFloat(
+          document.getElementById("holidayExtraHours").value
+        );
+
+        let baseSalary = daysWorked * 43000;
+        let extraDay = dayExtraHours * 6915;
+        let extraNight = nightExtraHours * 9681;
+        let extraHoliday = holidayExtraHours * 11064;
+        let grossSalary = baseSalary + extraDay + extraNight + extraHoliday;
+
+        let health = grossSalary * 0.04;
+        let pension = grossSalary * 0.04;
+        let food = grossSalary * 0.03;
+
+        let netSalary = grossSalary - health - pension - food;
+
+        document.getElementById(
+          "result"
+        ).innerHTML = `Salario bruto: $${grossSalary.toFixed(2)} <br>
+                                                           Descuentos: <br>
+                                                           - Salud (4%): $${health.toFixed(
+                                                             2
+                                                           )} <br>
+                                                           - Pensión (4%): $${pension.toFixed(
+                                                             2
+                                                           )} <br>
+                                                           - Alimentación (3%): $${food.toFixed(
+                                                             2
+                                                           )} <br>
+                                                           <strong>Salario neto: $${netSalary.toFixed(
+                                                             2
+                                                           )}</strong>`;
+      }
+    </script>
+  </body>
+</html>

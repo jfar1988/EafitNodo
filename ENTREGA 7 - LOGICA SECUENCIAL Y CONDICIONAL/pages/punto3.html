@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo de Ladrillos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input[type="number"] {
+        width: 100px;
+      }
+      .result {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Cálculo de Ladrillos</h2>
+    <form id="paredForm">
+      <label
+        >Ancho de la pared (m): <input type="number" id="anchoPared" required
+      /></label>
+      <label
+        >Alto de la pared (m): <input type="number" id="altoPared" required
+      /></label>
+      <label
+        >Área de un ladrillo (m²):
+        <input type="number" step="0.01" id="areaLadrillo" required
+      /></label>
+      <button type="button" onclick="calcularLadrillos()">Calcular</button>
+    </form>
+    <div class="result" id="resultadoLadrillos"></div>
+
+    <script>
+      function calcularLadrillos() {
+        const anchoPared = parseFloat(
+          document.getElementById("anchoPared").value
+        );
+        const altoPared = parseFloat(
+          document.getElementById("altoPared").value
+        );
+        const areaLadrillo = parseFloat(
+          document.getElementById("areaLadrillo").value
+        );
+
+        const areaPared = anchoPared * altoPared;
+        const numeroLadrillos = Math.ceil(areaPared / areaLadrillo);
+
+        document.getElementById("resultadoLadrillos").textContent =
+          "Número de ladrillos necesarios: " + numeroLadrillos;
+      }
+    </script>
+  </body>
+</html>

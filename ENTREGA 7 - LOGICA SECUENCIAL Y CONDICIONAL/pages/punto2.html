@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo de Pesticida y Cerca</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input[type="number"] {
+        width: 100px;
+      }
+      .result {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Cálculo de Pesticida y Cerca</h2>
+    <form id="terrenoForm">
+      <label
+        >Base Mayor (m): <input type="number" id="baseMayor" required
+      /></label>
+      <label
+        >Base Menor (m): <input type="number" id="baseMenor" required
+      /></label>
+      <label>Altura (m): <input type="number" id="altura" required /></label>
+      <button type="button" onclick="calcularTerreno()">Calcular</button>
+    </form>
+    <div class="result" id="resultadoTerreno"></div>
+
+    <script>
+      function calcularTerreno() {
+        const baseMayor = parseFloat(
+          document.getElementById("baseMayor").value
+        );
+        const baseMenor = parseFloat(
+          document.getElementById("baseMenor").value
+        );
+        const altura = parseFloat(document.getElementById("altura").value);
+
+        const area = ((baseMayor + baseMenor) / 2) * altura;
+        const pesticida = area * 1.5;
+        const perimetro =
+          baseMayor +
+          baseMenor +
+          2 *
+            Math.sqrt(
+              Math.pow((baseMayor - baseMenor) / 2, 2) + Math.pow(altura, 2)
+            );
+
+        document.getElementById("resultadoTerreno").textContent =
+          "Área: " +
+          area.toFixed(2) +
+          " m², " +
+          "Pesticida: " +
+          pesticida.toFixed(2) +
+          " litros, " +
+          "Cerca: " +
+          perimetro.toFixed(2) +
+          " metros";
+      }
+    </script>
+  </body>
+</html>
